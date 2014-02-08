@@ -5,6 +5,43 @@
 @import "bootstrap/bootstrap.less";
 
 /* ==========================================================================
+   Custom vars
+   ========================================================================== */
+
+// colors
+@black: #000;
+@white: #fff;
+@smoky-brown: #60321c;
+@smoky-dark-orange: #b65c1f;
+@smoky-light-orange: #d29c34;
+@smoky-green: #58732e;
+// computed
+@smoky-darker-brown: darken(@smoky-brown, 10);
+
+// fonts
+@smoky-font-sans: Arial, sans-serif;
+@smoky-font-serif: Georgia, serif;
+
+/* ==========================================================================
+   Bootstrap overrides
+   ========================================================================== */
+
+// colors
+@body-bg: @smoky-brown;
+@text-color: @white;
+@link-color: @smoky-dark-orange;
+@link-hover-color: @smoky-light-orange;
+
+// fonts
+@font-family-sans-serif: @smoky-font-sans;
+@font-family-base: @font-family-sans-serif;
+
+// navbar
+@navbar-border-radius: 0;
+@navbar-margin-bottom: 0;
+@navbar-inverse-bg: @smoky-darker-brown;
+
+/* ==========================================================================
    Base
    ========================================================================== */
 
@@ -18,6 +55,9 @@ body { }
 
 .banner { }
 
+.navbar-inverse {
+   border: none;
+}
 
 
 /* ==========================================================================
