@@ -11,7 +11,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
 /**
  * Configuration values
  */
-define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
+define('GOOGLE_ANALYTICS_ID', 'UA-32560183-1'); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter (http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
 
 /**
@@ -20,7 +20,7 @@ define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter 
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'col-sm-8';
+    $class = 'col-xs-12 col-sm-9 col-sm-pull-3 col-md-9 col-md-pull-3 col-lg-9 col-lg-pull-3';
   } else {
     // Classes on full width pages
     $class = 'col-sm-12';
@@ -33,7 +33,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return 'col-sm-4';
+  return 'col-xs-12 col-sm-3 col-sm-push-9 col-md-3 col-md-push-9 col-lg-3 col-lg-push-9';
 }
 
 /**
@@ -62,7 +62,7 @@ function roots_display_sidebar() {
      * Any of these page templates that return true won't show the sidebar
      */
     array(
-      'template-custom.php'
+      'template-full-width.php'
     )
   );
 
