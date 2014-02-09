@@ -9,8 +9,8 @@ add_action('wp_head', 'smoky_load_icons');
 function smoky_load_icons()
 {
   ?>
-  <link rel="icon" href="<?php echo home_url() ?>/favicon.ico">
-  <link rel="SHORTCUT ICON" href="<?php echo home_url() ?>/favicon.ico">
+  <link rel="icon" href="<?php echo get_stylesheet_directory_uri() ?>/assets/img/favicon.ico">
+  <link rel="SHORTCUT ICON" href="<?php echo get_stylesheet_directory_uri() ?>/assets/img/favicon.ico">
   <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri() ?>/assets/img/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_stylesheet_directory_uri() ?>/assets/img/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri() ?>/assets/img/apple-touch-icon-57x57.png">
