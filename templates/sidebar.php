@@ -31,7 +31,9 @@ elseif (is_page()) {
     dynamic_sidebar('real-estate');
   } elseif (is_page($area_info_page_id) || in_array($area_info_page_id, $post->ancestors)) {
     dynamic_sidebar('area-info');
-  } 
+  } else {
+    dynamic_sidebar('sidebar-primary');
+  }
 }
 else {
   dynamic_sidebar('sidebar-primary');
