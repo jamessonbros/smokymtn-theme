@@ -14,13 +14,49 @@ function roots_widgets_init() {
   ));
 
   register_sidebar(array(
-    'name'          => __('Footer', 'roots'),
-    'id'            => 'sidebar-footer',
+    'name'          => __('Vacation Rentals Sidebar', 'roots'),
+    'id'            => 'vacation',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>',
   ));
+
+  register_sidebar(array(
+    'name'          => __('Long-Term Rentals Sidebar', 'roots'),
+    'id'            => 'long-term',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
+  register_sidebar(array(
+    'name'          => __('Real Estate Sidebar', 'roots'),
+    'id'            => 'real-estate',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
+  register_sidebar(array(
+    'name'          => __('Area Info Sidebar', 'roots'),
+    'id'            => 'area-info',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
+  ));
+
+  // register_sidebar(array(
+  //   'name'          => __('Footer', 'roots'),
+  //   'id'            => 'sidebar-footer',
+  //   'before_widget' => '<section class="widget %1$s %2$s">',
+  //   'after_widget'  => '</section>',
+  //   'before_title'  => '<h3>',
+  //   'after_title'   => '</h3>',
+  // ));
 
   // Widgets
   register_widget('Roots_Vcard_Widget');

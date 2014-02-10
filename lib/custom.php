@@ -32,3 +32,21 @@ function smoky_load_fonts()
 
   wp_enqueue_style('gfont');
 }
+
+
+
+// filter menu items, ensure full URL
+add_filter('nav_menu_link_attributes', 'smoky_filter_nav_menu_items', 10, 3);
+function smoky_filter_nav_menu_items($atts, $item, $args)
+{
+  $href = $atts['href'];
+  $home_url = home_url();
+  $first_char = substr($href, 0, 1);
+
+  // if menu item starts with /
+  if ($first_char === '/') {
+    $atts['href'] = $home_url.$atts['href'];
+  }
+
+  return $atts;
+}
