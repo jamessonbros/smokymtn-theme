@@ -50,3 +50,21 @@ function smoky_filter_nav_menu_items($atts, $item, $args)
 
   return $atts;
 }
+
+
+// rental CPT page titles
+// If querying by bedrooms, append number of bedrooms to page title
+add_filter('roots_title', 'smoky_rentals_titles', 500, 2);
+function smoky_rentals_titles($title, $id)
+{
+  if (is_tax('rental_types')) {
+    $bedrooms = get_query_var('bedrooms');
+    if ($bedrooms) {
+      $title = "$bedrooms Bedroom " . $title;
+    }
+
+    return $title;
+  }
+
+  return $title;
+}
