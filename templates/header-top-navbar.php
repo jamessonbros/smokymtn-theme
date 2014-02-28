@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-          <div class="nav-container">
+          <div class="nav-container nav-container-stripe-primary">
             <?php if (has_nav_menu('top_navigation')) {
               wp_nav_menu(array(
                 'theme_location' => 'top_navigation',
@@ -15,15 +15,14 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div class="nav-container">
-            <?php if (has_nav_menu('top_right_navigation')) {
-              wp_nav_menu(array(
-                'theme_location' => 'top_right_navigation',
-                'container' => false,
-                'menu_class' => 'list-inline',
-                'menu_id' => 'top-right-nav',
-              ));
-            } ?>
+          <div class="nav-container nav-container-stripe-secondary">
+            <ul class="list-inline">
+              <li><a href="#">FB Like</a></li>
+              <li><a href="#">
+                <span class="glyphicon glyphicon-phone-alt"></span>
+                123.123.1234
+              </a></li>
+            </ul>
           </div>
         </div>
       </div>
