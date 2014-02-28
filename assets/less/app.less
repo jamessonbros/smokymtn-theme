@@ -13,8 +13,10 @@
 @white: #fff;
 @smoky-brown: #60321c;
 @smoky-dark-orange: #b65c1f;
-@smoky-light-orange: #d29c34;
-@smoky-green: #58732e;
+@smoky-light-orange: #df7741;
+@smoky-green: #82ca9c;
+@smoky-tan: #e1c8a2;
+@smoky-light-tan: #f1e5d3;
 // computed
 @smoky-darker-brown: darken(@smoky-brown, 10);
 
@@ -27,8 +29,8 @@
    ========================================================================== */
 
 // colors
-@body-bg: @smoky-brown;
-@text-color: @white;
+@body-bg: @smoky-tan;
+@text-color: @black;
 @link-color: @smoky-dark-orange;
 @link-hover-color: @smoky-light-orange;
 @brand-primary: @smoky-dark-orange;
@@ -43,13 +45,25 @@
 // navbar
 @navbar-border-radius: 0;
 @navbar-margin-bottom: 0;
-@navbar-inverse-bg: @smoky-darker-brown;
+@navbar-inverse-bg: @black;
 
 /* ==========================================================================
    Base
    ========================================================================== */
 
-body { }
+img, .wp-caption {
+   max-width: 100%;
+}
+.text-center, .center-block {
+   .img-responsive {
+      margin-left: auto;
+      margin-right: auto;
+   }
+}
+
+body {
+   background-image: url(../img/bg.jpg);
+}
 
 
 
@@ -57,7 +71,33 @@ body { }
    Header
    ========================================================================== */
 
-.banner { }
+.site-header {
+   background: url(../img/head-bg.jpg) repeat center top;
+}
+.stripe {
+   background-color: @black;
+   background-color: fade(@black, 60);
+   border-bottom: solid 2px fade(@smoky-light-orange, 80);
+   color: @smoky-green;
+   font-size: 0.9em;
+   padding: 0.5em 0;
+   a {
+      color: @smoky-green;
+   }
+   .list-inline {
+      margin-bottom: 0;
+   }
+}
+.banner {
+   padding: 1em 0;
+   .nav-container {
+      .list-inline > li > a {
+         font-size: 1.2em;
+         text-transform: uppercase;
+         color: @white;
+      }
+   }
+}
 
 .navbar-inverse {
    border: none;
@@ -128,10 +168,29 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    ========================================================================== */
 
 @media (min-width: @screen-sm-min) {
+   // footer
    .footer-mid { text-align: center; }
    .credit { text-align: right; }
 }
 
-@media (min-width: @screen-md-min) { }
+@media (min-width: @screen-md-min) {
+   // header
+   .banner {
+      .nav-container {
+         margin-top: 2em;
+         text-align: right;
+         .dropdown-menu {
+            text-align: left;
+         }
+      }
+   }
+}
 
-@media (min-width: @screen-lg-min) { }
+@media (min-width: @screen-lg-min) {
+   // header
+   .banner {
+      .nav-container {
+         margin-top: 2.6em;
+      }
+   }
+}
