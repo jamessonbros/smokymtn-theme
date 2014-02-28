@@ -3,12 +3,18 @@
  * Custom functions
  */
 
+function smoky_heros()
+{
+  if (is_front_page()) {
+    get_template_part('templates/carousel', 'front-page');
+  }
+}
 
 /**
  * Advanced custom fields
  */
 // Hide admin interface
-// define('ACF_LITE', true);
+define('ACF_LITE', true);
 // Include Advanced Custom Fields files
 include_once(dirname(__FILE__).'/advanced-custom-fields/acf.php');
 // Activate ACF add-ons
