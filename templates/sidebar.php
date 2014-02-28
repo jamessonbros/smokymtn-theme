@@ -22,9 +22,16 @@ elseif (is_page()) {
   global $post;
 
   $real_estate_page = get_page_by_path('real-estate');
-  $real_estate_page_id = $real_estate_page->ID;
+  if (!is_wp_error($real_estate_page) && is_object($real_estate_page))
+    $real_estate_page_id = $real_estate_page->ID;
+  else
+    $real_estate_page_id = null;
+
   $area_info_page = get_page_by_path('area-information');
-  $area_info_page_id = $area_info_page->ID;
+  if (!is_wp_error($area_info_page) && is_object($area_info_page))
+    $area_info_page_id = $area_info_page->ID;
+  else
+    $area_info_page_id = null;
 
   // if showing real estate page or sub-page
   if (is_page($real_estate_page_id) || in_array($real_estate_page_id, $post->ancestors)) {

@@ -4,6 +4,19 @@
  */
 
 
+/**
+ * Advanced custom fields
+ */
+// Hide admin interface
+// define('ACF_LITE', true);
+// Include Advanced Custom Fields files
+include_once(dirname(__FILE__).'/advanced-custom-fields/acf.php');
+// Activate ACF add-ons
+include_once(dirname(__FILE__).'/acf-gallery/gallery.php');
+include_once(dirname(__FILE__).'/acf-repeater/repeater.php');
+// Include theme-specific custom fields
+include_once(dirname(__FILE__).'/acf.php');
+
 // load favicon
 add_action('wp_head', 'smoky_load_icons');
 function smoky_load_icons()
@@ -28,7 +41,7 @@ function smoky_load_icons()
 add_action('wp_enqueue_styles', 'smoky_load_fonts');
 function smoky_load_fonts()
 {
-  wp_register_style('gfont', '#URL-to-google-fonts#');
+  wp_register_style('gfont', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Belleza');
 
   wp_enqueue_style('gfont');
 }
