@@ -44,7 +44,7 @@ function smoky_load_icons()
 
 
 // load custom fonts
-add_action('wp_enqueue_styles', 'smoky_load_fonts');
+add_action('wp_enqueue_scripts', 'smoky_load_fonts');
 function smoky_load_fonts()
 {
   wp_register_style('gfont', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Belleza');
