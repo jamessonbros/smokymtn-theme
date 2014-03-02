@@ -36,7 +36,7 @@
 @link-color: @smoky-blue;
 @link-hover-color: @smoky-light-orange;
 @brand-primary: @smoky-dark-orange;
-@headings-color: @smoky-darker-brown;
+@headings-color: @smoky-brown;
 
 // grid
 @grid-float-breakpoint: @screen-sm-max;
@@ -148,7 +148,20 @@ body {
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar {
+   padding-top: 1em; 
+
+   .widget {
+      ul {
+         list-style: none;
+         margin: 0 0 1em;
+         padding: 0;
+         ul {
+            margin: 0 0 0 1em;
+         }
+      }
+   }
+}
 
 
 
@@ -157,7 +170,12 @@ body {
    ========================================================================== */
 
 .hentry header { }
-.hentry time { }
+.hentry time {
+   display: block;
+   margin: 1em 0;
+   font-size: 0.8em;
+   font-style: italic;
+}
 .hentry .byline { }
 .hentry .entry-content { }
 .hentry footer { }
