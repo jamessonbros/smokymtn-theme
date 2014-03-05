@@ -1,3 +1,7 @@
+<?php
+global $cfs, $resco;
+?>
+
 <article <?php post_class(); ?>>
   <div class="entry-summary">
     <div class="row">
@@ -6,7 +10,12 @@
         <div class="rental-summary">
           <?php the_excerpt(); ?>
         </div>
-        <a href="<?php the_permalink() ?>" class="btn btn-primary btn-sm">More info &raquo;</a>
+        <div class="rental-icons">
+          <?php if ($cfs->get('pet_friendly')): ?>
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/pet-friendly.png" alt="Pet Friendly" width="60" />
+          <?php endif ?>
+        </div>
+        <p><a href="<?php the_permalink() ?>" class="btn btn-primary btn-sm">More info &raquo;</a></p>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <div class="rental-thumbnail">

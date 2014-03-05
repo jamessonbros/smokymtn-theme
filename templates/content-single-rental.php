@@ -39,7 +39,7 @@ $special = $cfs->get('on_special');
 
         <div class="rental-icons">
           <?php if ($pets): ?>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/petfriendly.gif" alt="Pet Friendly" width="90" />
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/pet-friendly.png" alt="Pet Friendly" width="80" />
           <?php endif ?>
 
           <?php if ($special): ?>
