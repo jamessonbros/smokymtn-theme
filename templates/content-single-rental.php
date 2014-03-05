@@ -25,7 +25,7 @@ $special = $cfs->get('on_special');
         </div>
         <div class="booking-button">
           <p>
-            <a href="<?php echo get_booking_url($property_id) ?>" class="btn btn-danger btn-block">Check Rates &amp; Availability</a>
+            <a href="<?php echo get_booking_url($property_id) ?>" class="btn btn-danger btn-block btn-lg">Check Rates &amp; Availability</a>
           </p>
         </div>
       </div>
@@ -47,8 +47,9 @@ $special = $cfs->get('on_special');
           <?php endif ?>
 
           <?php if ($tour360_url = $cfs->get('tour360_url')): ?>
-            <a href="<?php echo $tour360_url ?>" class="tour-360" target="_blank">
-              <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/360.gif" width="110" />
+            <a href="<?php echo $tour360_url ?>" class="btn btn-primary" target="_blank">
+              <span class="glyphicon glyphicon-repeat"></span> 
+              360&deg; Tour &raquo;
             </a>
           <?php endif ?>
 
