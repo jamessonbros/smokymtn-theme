@@ -18,11 +18,11 @@
 
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
-var Roots = {
+var SMG = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+      
     }
   },
   // Home page
@@ -36,6 +36,27 @@ var Roots = {
     init: function() {
       // JavaScript to be fired on the about us page
     }
+  },
+  single_rental: {
+    init: function() {
+      $('table')
+        .addClass('table');
+
+      var galleries = $('.photo-gallery');
+      // see http://stackoverflow.com/questions/14549826/bootstrap-tabs-jquery-masonry
+      $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        $(window).trigger('resize');
+      });
+      $(window).resize(function() {
+        $this = $('.photo-gallery');
+        $column = ($this.width() / 3) - 2;
+        $this.masonry({
+          columnWidth: $column,
+          gutter: 1,
+          itemSelector: '.photo-gallery-image'
+        });
+      });
+    }
   }
 };
 
@@ -43,7 +64,7 @@ var Roots = {
 // Add additional events for more control over timing e.g. a finalize event
 var UTIL = {
   fire: function(func, funcname, args) {
-    var namespace = Roots;
+    var namespace = SMG;
     funcname = (funcname === undefined) ? 'init' : funcname;
     if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
       namespace[func][funcname](args);

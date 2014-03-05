@@ -1,6 +1,9 @@
 <header class="site-header">
   <div class="stripe">
     <div class="container">
+      <div class="visible-xs visible-sm">
+        
+      </div>
       <div class="row">
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
           <div class="nav-container nav-container-stripe-primary">

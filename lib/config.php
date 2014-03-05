@@ -23,7 +23,7 @@ function roots_main_class() {
     $class = 'col-xs-12 col-sm-9 col-sm-push-3 col-md-9 col-md-push-3 col-lg-9 col-lg-push-3';
   } else {
     // Classes on full width pages
-    $class = 'col-sm-12';
+    $class = 'col-xs-12 col-sm-12 col-md-12 col-lg-12';
   }
 
   return $class;

@@ -87,3 +87,13 @@ function smoky_rentals_titles($title, $id)
 
   return $title;
 }
+
+
+// rental url helpers
+function get_booking_url($property_id)
+{
+  global $resco;
+  $coid = $resco->get_COID();
+
+  return 'http://secure.instantsoftwareonline.com/StayUSA/Availability.aspx?coid='.$resco->get_COID().'&amp;propid='.$property_id;
+}
