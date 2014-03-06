@@ -22,7 +22,21 @@ var SMG = {
   // All pages
   common: {
     init: function() {
-      
+      SMG._navMobile = $('.nav-mobile-container');
+      SMG._navTop = $('#top-nav');
+      SMG._navMain = $('#primary-nav');
+
+      var mobileNavTop = SMG._navTop.clone();
+      mobileNavTop
+        .removeClass('list-inline')
+        .addClass('nav nav-pills nav-stacked')
+        .appendTo(SMG._navMobile);
+
+      var mobileNavMain = SMG._navMain.clone();
+      mobileNavMain
+        .removeClass('list-inline')
+        .addClass('nav nav-pills nav-stacked')
+        .appendTo(SMG._navMobile);
     }
   },
   // Home page

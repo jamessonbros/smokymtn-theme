@@ -52,9 +52,9 @@
 @font-size-h1: 3em;
 
 // navbar
-@navbar-border-radius: 0;
-@navbar-margin-bottom: 0;
-@navbar-inverse-bg: @black;
+// @navbar-border-radius: 0;
+// @navbar-margin-bottom: 0;
+// @navbar-inverse-bg: @black;
 
 // carousel
 @carousel-control-color: @smoky-darker-brown;
@@ -101,7 +101,7 @@ body {
    background-color: @black;
    background-color: fade(@black, 60);
    border-bottom: solid 2px fade(@smoky-light-orange, 80);
-   color: @smoky-green;
+   color: @white;
    font-size: 0.9em;
    padding: 0.5em 0;
    a {
@@ -110,12 +110,21 @@ body {
    .list-inline {
       margin-bottom: 0;
    }
+   .nav-pills {
+      margin-top: 1em;
+
+      a:hover,
+      a:active,
+      a:focus {
+         color: @black;
+      }
+   }
 }
 .banner {
    padding: 1em 0;
    .nav-container {
       .list-inline > li > a {
-         font-size: 1.2em;
+         // font-size: 1.2em;
          text-transform: uppercase;
          color: @white;
       }
@@ -244,19 +253,25 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    .credit { text-align: right; }
 }
 
+@media (max-width: @screen-sm-max) {
+   .logo-container .img-responsive {
+      margin: 1em auto;
+   }
+}
+
 @media (min-width: @screen-md-min) {
-   // header
+   .nav-container-stripe-primary {
+      li.active a { color: @smoky-light-orange; }
+   }
    .nav-container-stripe-secondary {
       text-align: right;
    }
-   .banner {
-      .nav-container {
-         margin-top: 2em;
-         text-align: right;
-         .dropdown-menu {
-            text-align: left;
-         }
-      }
+   .banner .nav-container {
+      margin-top: 2.2em;
+      text-align: right;
+
+      .dropdown-menu { text-align: left; }
+      li.active a { text-decoration: underline; }
    }
 }
 
@@ -264,7 +279,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    // header
    .banner {
       .nav-container {
-         margin-top: 2.6em;
+         font-size: 1.2em;
+         margin-top: 2.2em;
       }
    }
 }

@@ -70,6 +70,34 @@ function smoky_filter_nav_menu_items($atts, $item, $args)
   return $atts;
 }
 
+// misc nav css filtering
+add_filter('nav_menu_css_class', 'smoky_filter_nav_menu_css_class', 10, 2);
+function smoky_filter_nav_menu_css_class($classes, $item)
+{
+  // remove active class on blog nav item if not on `post` post_type
+  if ($item->title == 'Blog') {
+    if (!is_home() && !is_singular('post')) {
+      // remove the active class
+      $classes = array_diff($classes, array('active'));
+    }
+  }
+
+  // add active class to rental/tax archives
+  if (is_tax('rental_types') || is_singular('rental')) {
+    // vacation
+    if (is_tax('rental_types', 'vacation') || has_term('vacation', 'rental_types')) {
+      if (false !== strpos($item->url, 'rentals/vacation'))
+        $classes[] = 'active';
+    }
+    if (is_tax('rental_types', 'long-term') || has_term('long-term', 'rental_types')) {
+      if (false !== strpos($item->url, 'rentals/long-term'))
+        $classes[] = 'active';
+    }
+  }
+
+  return $classes;
+}
+
 
 // rental CPT page titles
 // If querying by bedrooms, append number of bedrooms to page title
