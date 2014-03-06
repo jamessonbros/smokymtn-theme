@@ -43,13 +43,13 @@ $special = $cfs->get('on_special');
           <?php endif ?>
 
           <?php if ($special): ?>
-            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/special.jpg" alt="On Special" width="90" />
+            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/special.png" alt="On Special" width="90" />
           <?php endif ?>
 
           <?php if ($tour360_url = $cfs->get('tour360_url')): ?>
             <a href="<?php echo $tour360_url ?>" class="btn btn-primary" target="_blank">
               <span class="glyphicon glyphicon-repeat"></span> 
-              360&deg; Tour &raquo;
+              360&deg; Tour
             </a>
           <?php endif ?>
 
