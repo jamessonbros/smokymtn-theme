@@ -20,15 +20,17 @@
   <?php smoky_heros() ?>
 
   <div class="wrap container" role="document">
-    <div class="row visible-xs">
-      <div class="col-xs-12 sidebar-mobile">
-        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target=".sidebar-mobile-container">
-          <span class="glyphicon glyphicon-th-list"></span>
-          <span>Page Menu</span>
-        </button>
-        <div class="collapse sidebar-mobile-container"></div>
+    <?php if (roots_display_sidebar()) : ?>
+      <div class="row visible-xs">
+        <div class="col-xs-12 sidebar-mobile">
+          <button type="button" class="btn btn-primary" data-toggle="collapse" data-target=".sidebar-mobile-container">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <span>Page Menu</span>
+          </button>
+          <div class="collapse sidebar-mobile-container"></div>
+        </div>
       </div>
-    </div>
+    <?php endif ?>
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>

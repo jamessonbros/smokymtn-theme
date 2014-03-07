@@ -6,7 +6,7 @@
           <button type="button" class="btn btn-primary" data-toggle="collapse" data-target=".nav-mobile-container">
             <span>
               <span class="glyphicon glyphicon-th-list"></span> 
-              Menu
+              Main Menu
             </span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
