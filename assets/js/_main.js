@@ -22,21 +22,26 @@ var SMG = {
   // All pages
   common: {
     init: function() {
-      SMG._navMobile = $('.nav-mobile-container');
+      SMG._navMobileTarget = $('.nav-mobile-container');
+      SMG._sidebarMobileTarget = $('.sidebar-mobile-container');
       SMG._navTop = $('#top-nav');
       SMG._navMain = $('#primary-nav');
+      SMG._sidebar = $('.sidebar');
 
       var mobileNavTop = SMG._navTop.clone();
       mobileNavTop
         .removeClass('list-inline')
         .addClass('nav nav-pills nav-stacked')
-        .appendTo(SMG._navMobile);
+        .appendTo(SMG._navMobileTarget);
 
       var mobileNavMain = SMG._navMain.clone();
       mobileNavMain
         .removeClass('list-inline')
         .addClass('nav nav-pills nav-stacked')
-        .appendTo(SMG._navMobile);
+        .appendTo(SMG._navMobileTarget);
+
+      var mobileSidebar = SMG._sidebar.clone().contents();
+      mobileSidebar.appendTo(SMG._sidebarMobileTarget);
     }
   },
   // Home page
