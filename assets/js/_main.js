@@ -22,6 +22,12 @@ var SMG = {
   // All pages
   common: {
     init: function() {
+
+      // add BtSt's table classes
+      $('table')
+        .addClass('table table-responsive');
+
+      // mobile conversion
       SMG._navMobileTarget = $('.nav-mobile-container');
       SMG._sidebarMobileTarget = $('.sidebar-mobile-container');
       SMG._navTop = $('#top-nav');
@@ -58,9 +64,6 @@ var SMG = {
   },
   single_rental: {
     init: function() {
-      $('table')
-        .addClass('table');
-
       var galleries = $('.photo-gallery');
       // see http://stackoverflow.com/questions/14549826/bootstrap-tabs-jquery-masonry
       $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {

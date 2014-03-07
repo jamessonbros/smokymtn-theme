@@ -14,6 +14,7 @@ $special = $cfs->get('on_special');
         </header>
       </div>
     </div>
+    <!-- /row -->
     <div class="row">
       <div class="col-xs-12 col-sm-5 col-sm-push-7 col-md-5 col-md-push-7 col-lg-5 col-lg-push-7">
         <div class="rental-image">
@@ -59,85 +60,89 @@ $special = $cfs->get('on_special');
       </div>
     </div>
     <!-- /row -->
+
     <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-      <?php
-      $content = get_the_content();
-      if (!$content)
-        $content = $post->property_data->desc;
-      
-      $rates = $cfs->get('rates');
-      $images = $post->property_data->images;
-      $longitude = $post->property_data->long;
-      $latitude = $post->property_data->lat;
-      ?>
-      
-      <div id="tabs">
+        <?php
+        $content = get_the_content();
+        if (!$content)
+          $content = $post->property_data->desc;
         
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
-          <?php if ($images): ?>
-          <li><a href="#tab-photos" data-toggle="tab">Photos</a></li>
-          <?php endif ?>
-          <?php if ($rates): ?>
-          <li><a href="#tab-rates" data-toggle="tab">Rates</a></li>
-          <?php endif ?>
-          <?php if ($longitude && $latitude): ?>
-          <li><a href="#tab-map" data-toggle="tab">Map</a></li>
-          <?php endif; ?>
-        </ul>
-      
-        <div class="tab-content">
+        $rates = $cfs->get('rates');
+        $images = $post->property_data->images;
+        $longitude = $post->property_data->long;
+        $latitude = $post->property_data->lat;
+        ?>
+        
+        <div id="tabs">
+          
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-description" data-toggle="tab">Description</a></li>
+            <?php if ($images): ?>
+            <li><a href="#tab-photos" data-toggle="tab">Photos</a></li>
+            <?php endif ?>
+            <?php if ($rates): ?>
+            <li><a href="#tab-rates" data-toggle="tab">Rates</a></li>
+            <?php endif ?>
+            <?php if ($longitude && $latitude): ?>
+            <li><a href="#tab-map" data-toggle="tab">Map</a></li>
+            <?php endif; ?>
+          </ul>
+        
+          <div class="tab-content">
 
-          <div class="tab-pane active" id="tab-description">
-            <h2>Description</h2>
-            <?php echo $content ?>
-          </div>
-        
-          <?php if (!empty($images)): ?>
-          <div class="tab-pane" id="tab-photos">
-            <h2>Photos</h2>
-            <div class="images photos photo-gallery row">
-            <?php $i = 1; ?>
-            <?php foreach ($images as $image): ?>
-              <div class="image photo-gallery-image col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <a href="<?php echo $image->url ?>">
-                  <img src="<?php echo $image->url ?>" alt="<?php the_title_attribute() ?>" />
-                </a>
+            <div class="tab-pane active" id="tab-description">
+              <h2>Description</h2>
+              <?php echo $content ?>
+            </div>
+          
+            <?php if (!empty($images)): ?>
+            <div class="tab-pane" id="tab-photos">
+              <h2>Photos</h2>
+              <div class="images photos photo-gallery row">
+              <?php $i = 1; ?>
+              <?php foreach ($images as $image): ?>
+                <div class="image photo-gallery-image col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                  <a href="<?php echo $image->url ?>">
+                    <img src="<?php echo $image->url ?>" alt="<?php the_title_attribute() ?>" />
+                  </a>
+                </div>
+                <?php if ($i % 3 == 0): ?>
+                  <div class="clearfix"></div>
+                <?php endif ?>
+              <?php $i++; endforeach; ?>
               </div>
-              <?php if ($i % 3 == 0): ?>
-                <div class="clearfix"></div>
-              <?php endif ?>
-            <?php $i++; endforeach; ?>
             </div>
-          </div>
-          <?php endif ?>
-          
+            <?php endif ?>
+            
 
-          <?php if ($rates): ?>
-          <div class="tab-pane" id="tab-rates">
-            <h2>Rates</h2>
-            <div class="rates">
-              <?php echo $rates ?>
+            <?php if ($rates): ?>
+            <div class="tab-pane" id="tab-rates">
+              <h2>Rates</h2>
+              <div class="rates">
+                <?php echo $rates ?>
+              </div>
             </div>
-          </div>
-          <?php endif ?>
-          
-          <?php if ($longitude && $latitude): ?>
-          <div class="tab-pane" id="tab-map">
-            <h2>Map</h2>
-            <input type="hidden" name="longitude" value="<?php echo $longitude ?>">
-            <input type="hidden" name="latitude" value="<?php echo $latitude ?>">
-            <div id="map"><a href="#">View a map &raquo;</a></div>
-          </div>
-          <?php endif ?>
+            <?php endif ?>
+            
+            <?php if ($longitude && $latitude): ?>
+            <div class="tab-pane" id="tab-map">
+              <h2>Map</h2>
+              <input type="hidden" name="longitude" value="<?php echo $longitude ?>">
+              <input type="hidden" name="latitude" value="<?php echo $latitude ?>">
+              <div id="map"><a href="#">View a map &raquo;</a></div>
+            </div>
+            <?php endif ?>
 
+          </div>
+          <!-- /tab-content -->
+          
         </div>
-        <!-- /tab-content -->
-        
-      </div>
-      <!-- /tabs -->
+        <!-- /tabs -->
 
+      </div>
     </div>
+    <!-- /row -->
   </article>
 <?php endwhile; ?>
