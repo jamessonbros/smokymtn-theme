@@ -26,7 +26,7 @@ $special = $cfs->get('on_special');
         </div>
         <div class="booking-button">
           <p>
-            <a href="<?php echo get_booking_url($property_id) ?>" class="btn btn-danger btn-block btn-lg">Check Rates &amp; Availability</a>
+            <a href="<?php echo get_booking_url($property_id) ?>" class="btn btn-danger btn-block btn-lg btn-rates">Check Rates &amp; Availability</a>
           </p>
         </div>
       </div>
