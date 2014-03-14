@@ -23,22 +23,16 @@ var SMG = {
   common: {
     init: function() {
 
-      // add BtSt's table classes
+      // add Bootsrap's table classes
       $('table')
         .addClass('table table-responsive');
 
-      // mobile conversion
+      // Mobile navs
       SMG._navMobileTarget = $('.nav-mobile-container');
       SMG._sidebarMobileTarget = $('.sidebar-mobile-container');
       SMG._navTop = $('#top-nav');
       SMG._navMain = $('#primary-nav');
       SMG._sidebar = $('.sidebar');
-
-      var mobileNavTop = SMG._navTop.clone();
-      mobileNavTop
-        .removeClass('list-inline')
-        .addClass('nav nav-pills nav-stacked')
-        .appendTo(SMG._navMobileTarget);
 
       var mobileNavMain = SMG._navMain.clone();
       mobileNavMain
@@ -46,6 +40,12 @@ var SMG = {
         .addClass('nav nav-pills nav-stacked')
         .appendTo(SMG._navMobileTarget);
 
+      var mobileNavTopItems = SMG._navTop.clone().contents();
+      mobileNavTopItems.appendTo(mobileNavMain);
+
+
+
+      // Mobile Sidebar
       var mobileSidebar = SMG._sidebar.clone().contents();
       mobileSidebar.appendTo(SMG._sidebarMobileTarget);
     }
@@ -64,8 +64,15 @@ var SMG = {
   },
   single_rental: {
     init: function() {
+
+      /**
+       * Repaint the masonry gallery when:
+       *  - window is resized
+       *  - any tab is clicked/shown
+       *
+       * @link see http://stackoverflow.com/questions/14549826/bootstrap-tabs-jquery-masonry
+       */
       var galleries = $('.photo-gallery');
-      // see http://stackoverflow.com/questions/14549826/bootstrap-tabs-jquery-masonry
       $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
         $(window).trigger('resize');
       });
