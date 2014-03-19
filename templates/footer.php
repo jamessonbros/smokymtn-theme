@@ -1,13 +1,11 @@
 <footer class="content-info" role="contentinfo">
   <div class="container">
-    <div class="row">
+    <div class="row membership">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
         <p>Member of Jackson, Macon, Haywood, and Swain County Chambers of Commerce</p>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/equal-housing.jpg" alt="Equal Housing Opportunity">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/mls.jpg" alt="MLS">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/ncvrma.jpg" alt="NCVRMA">
+        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/affiliate-logos.png" alt="Equal Housing Opportunity, NCVRMA, MLS">
       </div>
     </div>
     <div class="row">
