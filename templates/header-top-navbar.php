@@ -31,10 +31,10 @@
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
           <div class="nav-container nav-container-stripe-secondary">
             <ul class="list-inline" id="nav-contact">
-              <li><a href="#">FB Like</a></li>
-              <li><a href="#">
+              <li><a href="<?php echo SMOKY_FB_URL ?>" target="_blank" title="Find us on Facebook"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/fb.png" alt="Find us on Facebook"></a></li>
+              <li><a href="tel:+18285868058">
                 <span class="glyphicon glyphicon-phone-alt"></span>
-                123.123.1234
+                (828) 586-8058
               </a></li>
             </ul>
           </div>

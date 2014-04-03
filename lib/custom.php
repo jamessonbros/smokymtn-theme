@@ -3,6 +3,10 @@
  * Custom functions
  */
 
+define('SMOKY_FB_URL', 'https://www.facebook.com/smokymtngetaways');
+
+
+
 function smoky_heros()
 {
   if (is_front_page()) {

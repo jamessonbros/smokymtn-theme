@@ -32,6 +32,7 @@ var SMG = {
       SMG._sidebarMobileTarget = $('.sidebar-mobile-container');
       SMG._navTop = $('#top-nav');
       SMG._navMain = $('#primary-nav');
+      SMG._navContact = $('#nav-contact');
       SMG._sidebar = $('.sidebar');
 
       var mobileNavMain = SMG._navMain.clone();
@@ -42,6 +43,12 @@ var SMG = {
 
       var mobileNavTopItems = SMG._navTop.clone().contents();
       mobileNavTopItems.appendTo(mobileNavMain);
+
+      var mobileNavContactItems = SMG._navContact.clone().contents();
+      var fbLink = mobileNavContactItems.find('a[href*="facebook"]');
+      var fbText = fbLink.attr('title');
+      fbLink.append(" " + fbText);
+      mobileNavContactItems.appendTo(mobileNavMain);
 
 
 
